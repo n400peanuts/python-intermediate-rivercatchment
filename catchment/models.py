@@ -39,10 +39,8 @@ def read_variable_from_csv(filename):
 def daily_total(data):
     """Calculate the daily total of a 2d data array.
 
-    Index must be np.datetime64 compatible format.
-
-    :param data: array
-        2D data array
+    :param data: pandas dataframe
+        Index must be np.datetime64 compatible format.
     :returns dt: daily total
     """
     dt = data.groupby(data.index.date).sum()
@@ -52,10 +50,10 @@ def daily_total(data):
 def daily_mean(data):
     """Calculate the daily mean of a 2D data array.
 
-    Index must be np.datetime64 compatible format.
 
-    :param data: array
-        2D data array
+
+    :param data: pandas dataframe
+        Index must be np.datetime64 compatible format.
     :returns dm: daily mean
     """
     dm = data.groupby(data.index.date).mean()
@@ -65,10 +63,8 @@ def daily_mean(data):
 def daily_max(data):
     """Calculate the daily max of a 2d data array.
 
-    Index must be np.datetime64 compatible format.
-
-    :param data: array
-        2D data array
+    :param data: pandas dataframe
+        Index must be np.datetime64 compatible format.
     :returns dmax: daily maximum
     """
     dmax = data.groupby(data.index.date).max()
@@ -78,10 +74,8 @@ def daily_max(data):
 def daily_min(data):
     """Calculate the daily min of a 2d data array.
 
-    Index must be np.datetime64 compatible format.
-
-    :param data: array
-        2D data array
+    :param data: pandas dataframe
+        Index must be np.datetime64 compatible format.
     :returns dmin: daily minimum
     """
     dmin = data.groupby(data.index.date).min()
