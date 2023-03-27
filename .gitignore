@@ -1,6 +1,7 @@
 # IDEs
 .vscode/
 .idea/
+*.DS_Store
 
 # Intermediate Coverage file
 .coverage
@@ -12,3 +13,7 @@
 *.pyc
 *.egg-info
 .pytest_cache
+
+# virtual environments
+venv/
+.venv/
