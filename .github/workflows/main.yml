@@ -18,7 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         python3 -m pip install pip==22.0.4
-        pip3 install requirements.txt
+        pip3 install -r requirements.txt
 
     - name: Test with pytest
       run: |
