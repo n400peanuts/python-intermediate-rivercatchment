@@ -13,11 +13,11 @@ jobs:
     - name: Setup python 3.10
       uses: actions/setup-python@v2
       with:
-        python-version: "3.9"
+        python-version: "3.8"
 
     - name: Install dependencies
       run: |
-        python3 -m pip install --upgrade pip
+        python3 -m pip install pip==22.0.4
         pip3 install requirements.txt
 
     - name: Test with pytest
