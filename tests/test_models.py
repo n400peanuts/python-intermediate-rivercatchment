@@ -4,7 +4,19 @@ import pandas as pd
 import pandas.testing as pdt
 import datetime
 import pytest
-import numpy.testing as npt
+import geopandas as gpd
+from shapely.geometry import Point
+
+
+def test_create_site_with_position():
+    """Check a site is created correctly given a name."""
+    from catchment.models import Site
+    name = 'PL23'
+    longitude = 5
+    latitude = 7
+    position = gpd.GeoDataFrame(geometry=[Point((longitude,latitude))],crs='EPSG:4326')
+    p = Site(name = name, longitude = longitude, latitude = latitude)
+    assert p.location.geom_equals(position)[0]
 
 
 @pytest.mark.parametrize(
