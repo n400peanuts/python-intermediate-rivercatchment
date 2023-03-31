@@ -33,7 +33,18 @@ if __name__ == "__main__":
         'infiles',
         nargs='+',
         help='Input CSV(s) containing measurement data')
-    
+
+    parser.add_argument('-m', '--measurements',
+                        help='Name of measurements data series to load',
+                        required=True)
+
+    parser.add_argument('-d', '--dudinfo',
+                        help='not required string',
+                        required=True
+
+    )
+
     args = parser.parse_args()
-    
+    print(args.dudinfo)
+    print(args.measurements)
     main(args)
